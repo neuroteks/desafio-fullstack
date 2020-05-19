@@ -47,6 +47,7 @@ A aplicação deverá conter as seguintes tabelas no banco de dados:
 ###### 8° - Documente como rodar sua aplicação. (docker-compose irá facilitar pra você e pra gente!)
 ###### 9° - Os commits, assim como o código, serão analisados, ou seja, commits pequenos.
 ###### 10° - Ao final do desafio, crie um pull request para esse repo!
+###### 11° - O seu código e commits devem ser feitos em INGLÊS!
 .
 O código que você fez, é seu, então use-o como documentação ou portifólio!
 Boa sorte!
