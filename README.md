@@ -37,15 +37,16 @@ A aplicação deverá conter as seguintes tabelas no banco de dados:
 - Não é obrigatório, mas um app em Flutter ou React-native, que consome a API seria bem legal também!
 
 ##### Obs:
-###### 1° - Faça um fork desse repo e baixe-o na sua máquina.
-###### 2° - Crie uma branch com o nome seu-nome-desafio-full-stack.
-###### 3° - Crie uma pasta para a API e uma para o front-end dentro do mesmo projeto e code dentro delas.
-###### 4° - O código deve seguir um padrão clean code e clean architecture.
-###### 5° - Conceitos como SOLID e YAGNI devem ser seguidos.
-###### 6° - O front-end deve ser fácil de ser usado e componentizado. (Use um template se preferir, nós usamos!).
-###### 7° - Documente como rodar sua aplicação. (docker-compose irá facilitar pra você e pra gente!)
-###### 8° - Os commits, assim como o código, serão analisados, ou seja, commits pequenos.
-###### 9° - Ao final do desafio, crie um pull request para esse repo!
+###### 1° - Não precisa fazer tudo, mas tudo que fizer, DEVE FUNCIONAR!
+###### 2° - Faça um fork desse repo e baixe-o na sua máquina.
+###### 3° - Crie uma branch com o nome seu-nome-desafio-full-stack.
+###### 4° - Crie uma pasta para a API e uma para o front-end dentro do mesmo projeto e code dentro delas.
+###### 5° - O código deve seguir um padrão clean code e clean architecture.
+###### 6° - Conceitos como SOLID e YAGNI devem ser seguidos.
+###### 7° - O front-end deve ser fácil de ser usado e componentizado. (Use um template se preferir, nós usamos!).
+###### 8° - Documente como rodar sua aplicação. (docker-compose irá facilitar pra você e pra gente!)
+###### 9° - Os commits, assim como o código, serão analisados, ou seja, commits pequenos.
+###### 10° - Ao final do desafio, crie um pull request para esse repo!
 .
 O código que você fez, é seu, então use-o como documentação ou portifólio!
 Boa sorte!
