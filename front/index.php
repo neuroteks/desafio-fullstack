@@ -16,8 +16,12 @@ if (isset($path[1])) {
     $object = new $class();
     $object->$method();
 } else {
-    require_once 'controller/LoginController.php';
+    require_once 'controller/PagesController.php';
+    $object = new PagesController();
 
-    $object = new LoginController();
-    $object->index();
+    if ($path[0] != '') {
+        $object->index($path[0]);
+    } else {
+        $object->index();
+    }
 }

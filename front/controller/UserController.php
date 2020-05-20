@@ -1,25 +1,27 @@
 <?php
 
-class LoginController
+class UserController
 {
-    public function login()
+    public function register()
     {
-        $url = PATH . 'api/login/login';
+        $url = PATH . 'api/user/register';
 
         $fields = [
+            'name' => filter_input(INPUT_POST, 'name'),
             'email' => filter_input(INPUT_POST, 'email'),
-            'password' => filter_input(INPUT_POST, 'password')
+            'cpf' => filter_input(INPUT_POST, 'cpf'),
+            'password' => filter_input(INPUT_POST, 'password'),
+            'confirm_password' => filter_input(INPUT_POST, 'confirm_password')
         ];
 
         $result = json_decode($this->httpPost($url, $fields));
-        
-        $_SESSION['user'] = $result->user;
+
         $_SESSION['message'] = $result->message;
-        
-        if($_SESSION['user']) {
-            header("Location: ../register");
+
+        if($_SESSION['message'][0] == 'success') {
+            header('Location: ../login');
         } else {
-            header("Location: ../login");
+            header('Location: ../register');
         }
     }
 

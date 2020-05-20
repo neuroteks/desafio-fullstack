@@ -28,14 +28,30 @@
     <!-- /.login-logo -->
     <div class="card">
       <div class="card-body login-card-body">
-        <p class="login-box-msg">Entre com seu email e senha</p>
+        <p class="login-box-msg">Crie sua conta preenchendo as informações abaixo.</p>
 
-        <form action="login/login" method="post">
+        <form action="user/register" method="post">
+          <div class="input-group mb-3">
+            <input type="text" name="name" class="form-control" placeholder="Nome">
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-user"></span>
+              </div>
+            </div>
+          </div>
           <div class="input-group mb-3">
             <input type="text" name="email" class="form-control" placeholder="Email">
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fas fa-envelope"></span>
+              </div>
+            </div>
+          </div>
+          <div class="input-group mb-3">
+            <input type="text" name="cpf" class="form-control" placeholder="CPF">
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-fingerprint"></span>
               </div>
             </div>
           </div>
@@ -47,11 +63,19 @@
               </div>
             </div>
           </div>
-          <button type="submit" class="btn btn-primary btn-block">Entrar</button>
+          <div class="input-group mb-3">
+            <input type="password" name="password_confirm" class="form-control" placeholder="Confirmar senha">
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-lock"></span>
+              </div>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block" onclick="return confirm('ctz?')">Registrar</button>
         </form>
         <hr>
         <p class="mb-1">
-          <a href="register">Faça seu cadastro</a>
+          <a href="login">Já possuo uma conta. Entrar</a>
         </p>
       </div>
       <!-- /.login-card-body -->

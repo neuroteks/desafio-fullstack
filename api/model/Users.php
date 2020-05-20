@@ -19,11 +19,12 @@ class Users extends Connection
 
         if ($conn = $this->connect()) {
             if ($conn->query($sql)) {
-                die('adicionado');
+                $message = ["success", "Usuário criado com sucesso."];
+            } else {
+                $message = ["error", "Erro ao cadastrar usuário."];
             }
-            die("nao add");
         }
-        die("erro de conexao");
+        die(json_encode(["message" => $message]));
     }
 
 

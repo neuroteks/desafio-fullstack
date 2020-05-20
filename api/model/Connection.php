@@ -10,7 +10,11 @@ class Connection
     public function connect()
     {
         $connect = new Connection();
-        if ($conn = new mysqli($connect->host, $connect->user, $connect->password, $connect->db)) {
+        $conn = new mysqli($connect->host, $connect->user, $connect->password, $connect->db);
+        if ($conn->connect_errno) {
+            $this->migration();
+            $this->connect();
+        } else {
             return $conn;
         }
     }
