@@ -1,22 +1,23 @@
-<form action="../api/user/register" method="post">
+<?php
 
-<input type="text" name="name"><br><br>
+session_start();
 
-<input type="text" name="email"><br><br>
+$url = "http://$_SERVER[HTTP_HOST]/desafio-fullstack/";
+define('PATH', $url);
 
-<input type="text" name="cpf"><br><br>
+$path = explode('/', filter_input(INPUT_GET, 'path'));
 
-<input type="text" name="password"><br><br>
+$class = $path[0] . 'Controller';
 
-<input type="submit">
+if (isset($path[1])) {
+    $method = $path[1];
+    require_once 'controller/' . $class . '.php';
 
-</form> <br><br><br><br>
-<form action="../api/login/login" method="post">
+    $object = new $class();
+    $object->$method();
+} else {
+    require_once 'controller/LoginController.php';
 
-<input type="text" name="email"><br><br>
-
-<input type="text" name="password"><br><br>
-
-<input type="submit">
-
-</form>
+    $object = new LoginController();
+    $object->index();
+}

@@ -1,7 +1,5 @@
 <?php
 
-session_start();
-
 $path = explode('/', filter_input(INPUT_GET, 'path'));
 
 $class = $path[0] . 'Controller';
