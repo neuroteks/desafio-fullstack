@@ -4,7 +4,7 @@ class LoginController
 {
     public function login()
     {
-        $url = PATH . 'api/login/login';
+        $url = API_PATH . 'login/login';
 
         $fields = [
             'email' => filter_input(INPUT_POST, 'email'),
@@ -12,14 +12,14 @@ class LoginController
         ];
 
         $result = json_decode($this->httpPost($url, $fields));
-        
+
         $_SESSION['user'] = $result->user;
         $_SESSION['message'] = $result->message;
-        
+
         if($_SESSION['user']) {
             header("Location: ../register");
         } else {
-            header("Location: ../login");
+            header("Location: ..");
         }
     }
 

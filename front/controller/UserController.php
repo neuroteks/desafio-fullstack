@@ -4,7 +4,7 @@ class UserController
 {
     public function register()
     {
-        $url = PATH . 'api/user/register';
+        $url = API_PATH . 'user/register';
 
         $fields = [
             'name' => filter_input(INPUT_POST, 'name'),

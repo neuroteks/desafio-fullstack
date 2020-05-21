@@ -13,10 +13,10 @@ class Connection
         $conn = new mysqli($connect->host, $connect->user, $connect->password, $connect->db);
         if ($conn->connect_errno) {
             $this->migration();
-            $this->connect();
-        } else {
-            return $conn;
+            sleep(2);
+            return $this->connect();
         }
+        return $conn;
     }
 
     public function migration()

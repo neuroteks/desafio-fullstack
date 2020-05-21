@@ -71,7 +71,7 @@
               </div>
             </div>
           </div>
-          <button type="submit" class="btn btn-primary btn-block" onclick="return confirm('ctz?')">Registrar</button>
+          <button type="submit" class="btn btn-primary btn-block">Registrar</button>
         </form>
         <hr>
         <p class="mb-1">

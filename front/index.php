@@ -2,8 +2,9 @@
 
 session_start();
 
-$url = "http://$_SERVER[HTTP_HOST]/desafio-fullstack/";
-define('PATH', $url);
+$url = "http://$_SERVER[HTTP_HOST]/desafio-fullstack/api/";
+
+define('API_PATH', $url);
 
 $path = explode('/', filter_input(INPUT_GET, 'path'));
 

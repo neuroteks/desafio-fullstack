@@ -4,6 +4,10 @@ require_once 'model/Users.php';
 
 class LoginController extends Users
 {
+
+    public function teste() {
+        require_once 'home.php';
+    }
     public function login()
     {
         if (getenv('REQUEST_METHOD') != 'POST') {
@@ -16,9 +20,6 @@ class LoginController extends Users
         $user = $this->auth($email, $password);
 
         if ($user) {
-
-            unset($user['password']);
-
             require_once 'model/SessionToken.php';
             $token = new SessionToken();
             $user['session_token'] = $token->create($user['id']);
