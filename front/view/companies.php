@@ -40,7 +40,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <!-- Left navbar links -->
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a href="" class="nav-link">Home</a>
+              <a href="." class="nav-link">Home</a>
             </li>
             <li class="nav-item">
               <a href="" class="nav-link">Clientes</a>
@@ -48,7 +48,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <li class="nav-item dropdown">
               <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">Empresa</a>
               <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow">
-                <li><a href="companies" class="dropdown-item">Gerenciar</a></li>
+                <li><a href="#" class="dropdown-item">Gerenciar</a></li>
                 <li><a href="#" class="dropdown-item">Cadastrar nova</a></li>
               </ul>
             </li>
@@ -87,11 +87,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <div class="container">
           <div class="row mb-2">
             <div class="col-sm-6">
-              <h1 class="m-0 text-dark">Home</h1>
+              <h1 class="m-0 text-dark">Empresas</h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item active">Home</li>
+              <li class="breadcrumb-item"><a href=".">Home</a></li>
+              <li class="breadcrumb-item active">Empresas</li>
               </ol>
             </div><!-- /.col -->
           </div><!-- /.row -->
@@ -103,6 +104,32 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <div class="content">
         <div class="container">
           <div class="row">
+            <div class="card col-12">
+              <div class="card-header">
+                <a href="#" class="btn btn-success">Nova empresa</a>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <table id="example1" class="table table-bordered table-striped">
+                  <thead>
+                    <tr>
+                      <th>Nome da empresa</th>
+                      <th width="50px"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Trident</td>
+                      <td>
+                        <a href="#" class="btn btn-secondary">Detalhes</a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
           </div>
           <!-- /.row -->
         </div><!-- /.container-fluid -->
@@ -125,6 +152,26 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <script src="view/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
   <!-- AdminLTE App -->
   <script src="view/plugins/adminlte/js/adminlte.min.js"></script>
+
+
+  <!-- page script -->
+  <script>
+    $(function() {
+      $("#example1").DataTable({
+        "responsive": true,
+        "autoWidth": false,
+      });
+      $('#example2').DataTable({
+        "paging": true,
+        "lengthChange": false,
+        "searching": false,
+        "ordering": true,
+        "info": true,
+        "autoWidth": false,
+        "responsive": true,
+      });
+    });
+  </script>
 </body>
 
 </html>
