@@ -4,12 +4,11 @@ class PagesController
 {
     public function index($param = null)
     {
-        if (isset($_SESSION['user']) && $_SESSION['user'] != null) {
+        if (isset($_SESSION['client']) && $_SESSION['client'] != null) {
             if ($param) {
                 require_once 'view/' . $param . '.php';
             } else {
-                session_destroy();
-                require_once '';
+                require_once 'view/home.php';
             }
         } else if($param == 'register') {
             require_once 'view/register.php';

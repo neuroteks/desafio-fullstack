@@ -1,13 +1,9 @@
 <?php
 
-require_once 'model/Users.php';
+require_once 'model/Clients.php';
 
-class LoginController extends Users
+class LoginController extends Clients
 {
-
-    public function teste() {
-        require_once 'home.php';
-    }
     public function login()
     {
         if (getenv('REQUEST_METHOD') != 'POST') {
@@ -17,18 +13,18 @@ class LoginController extends Users
         $email = filter_input(INPUT_POST, 'email');
         $password = filter_input(INPUT_POST, 'password');
 
-        $user = $this->auth($email, $password);
+        $client = $this->auth($email, $password);
 
-        if ($user) {
+        if ($client) {
             require_once 'model/SessionToken.php';
             $token = new SessionToken();
-            $user['session_token'] = $token->create($user['id']);
+            $client['session_token'] = $token->create($client['id']);
 
             $success = ["success", "Bem vindo!"];
         } else {
-            $success = ["error", "Usuário ou senha inválidos."];
+            $success = ["error", "Email ou senha inválidos."];
         }
 
-        die(json_encode(["user" => $user, "message" => $success]));
+        die(json_encode(["client" => $client, "message" => $success]));
     }
 }

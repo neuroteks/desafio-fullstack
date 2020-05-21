@@ -1,10 +1,10 @@
 <?php
 
-class UserController
+class ClientController
 {
     public function register()
     {
-        $url = API_PATH . 'user/register';
+        $url = API_PATH . 'client/register';
 
         $fields = [
             'name' => filter_input(INPUT_POST, 'name'),

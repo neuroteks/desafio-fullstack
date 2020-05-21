@@ -4,25 +4,25 @@ require_once 'Connection.php';
 
 class SessionToken extends Connection
 {
-    protected $usuario_id;
+    protected $client_id;
     protected $session_token;
 
-    public function create($usuario_id)
+    public function create($client_id)
     {
         $key = $this->generateKey();
         $hash = password_hash($key, PASSWORD_DEFAULT);
 
 
-        $sql = "SELECT * FROM session_tokens WHERE usuario_id = '$usuario_id'";
+        $sql = "SELECT * FROM session_tokens WHERE cliente_id = '$client_id'";
 
         if ($conn = $this->connect()) {
             $token = $conn->query($sql);
             $token = $token->fetch_array();
 
             if ($token) {
-                $sql = "UPDATE session_tokens SET session_token = '$hash', created = current_timestamp() WHERE usuario_id = '$usuario_id'";
+                $sql = "UPDATE session_tokens SET session_token = '$hash', created = current_timestamp() WHERE cliente_id = '$client_id'";
             } else {
-                $sql = "INSERT INTO session_tokens (usuario_id, session_token) VALUES ('$usuario_id', '$hash')";
+                $sql = "INSERT INTO session_tokens (cliente_id, session_token) VALUES ('$client_id', '$hash')";
             }
         }
 

@@ -13,14 +13,17 @@ class LoginController
 
         $result = json_decode($this->httpPost($url, $fields));
 
-        $_SESSION['user'] = $result->user;
+        $_SESSION['client'] = $result->client;
         $_SESSION['message'] = $result->message;
 
-        if($_SESSION['user']) {
-            header("Location: ../register");
-        } else {
-            header("Location: ..");
-        }
+        header("Location: ..");
+    }
+
+    public function logout()
+    {
+        unset($_SESSION['client']);
+
+        header("Location: ..");
     }
 
     public function httpPost($url, $data)

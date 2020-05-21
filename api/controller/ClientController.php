@@ -1,8 +1,8 @@
 <?php
 
-require_once 'model/Users.php';
+require_once 'model/Clients.php';
 
-class UserController extends Users
+class ClientController extends Clients
 {
     public function register()
     {

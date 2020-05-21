@@ -30,7 +30,7 @@
       <div class="card-body login-card-body">
         <p class="login-box-msg">Crie sua conta preenchendo as informações abaixo.</p>
 
-        <form action="user/register" method="post">
+        <form action="client/register" method="post">
           <div class="input-group mb-3">
             <input type="text" name="name" class="form-control" placeholder="Nome">
             <div class="input-group-append">

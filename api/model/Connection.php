@@ -27,7 +27,7 @@ class Connection
 
         $db_query = "CREATE DATABASE IF NOT EXISTS `$connect->db` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci";
 
-        $users_query = "CREATE TABLE IF NOT EXISTS `usuarios` (
+        $users_query = "CREATE TABLE IF NOT EXISTS `clientes` (
             `id` int(11) NOT NULL AUTO_INCREMENT,
             `name` varchar(255) NOT NULL,
             `email` varchar(255) NOT NULL,
@@ -38,7 +38,7 @@ class Connection
           ) ENGINE=InnoDB DEFAULT CHARSET=utf8";
 
         $session_token_query = "CREATE TABLE IF NOT EXISTS `session_tokens` (
-          `usuario_id` int(11) NOT NULL,
+          `cliente_id` int(11) NOT NULL,
           `session_token` varchar(255) NOT NULL,
           `created` datetime NOT NULL DEFAULT current_timestamp(),
           PRIMARY KEY (`usuario_id`)
