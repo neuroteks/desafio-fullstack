@@ -13,16 +13,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <title>Desafio</title>
 
   <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="view/plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="<?= APP_PATH ?>/view/plugins/fontawesome-free/css/all.min.css">
   <!-- Toastr -->
-  <link rel="stylesheet" href="view/plugins/toastr/toastr.min.css">
+  <link rel="stylesheet" href="<?= APP_PATH ?>/view/plugins/toastr/toastr.min.css">
   <!-- DataTables -->
-  <link rel="stylesheet" href="view/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
-  <link rel="stylesheet" href="view/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+  <link rel="stylesheet" href="<?= APP_PATH ?>/view/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="<?= APP_PATH ?>/view/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="view/plugins/adminlte/css/adminlte.min.css">
+  <link rel="stylesheet" href="<?= APP_PATH ?>/view/plugins/adminlte/css/adminlte.min.css">
   <!-- Style -->
-  <link rel="stylesheet" href="view/css/style.css">
+  <link rel="stylesheet" href="<?= APP_PATH ?>/view/css/style.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
@@ -44,16 +44,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <!-- Left navbar links -->
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a href="." class="nav-link">Home</a>
+              <a href="<?= APP_PATH ?>" class="nav-link">Home</a>
             </li>
             <li class="nav-item">
-              <a href="companies" class="nav-link">Empresa</a>
+              <a href="<?= APP_PATH ?>companies" class="nav-link">Empresa</a>
             </li>
             <li class="nav-item dropdown">
               <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">Sistema</a>
               <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow">
-                <li><a href="clients" class="dropdown-item">Listar Clientes</a></li>
-                <li><a href="users" class="dropdown-item">Gerenciar Usuários</a></li>
+                <li><a href="<?= APP_PATH ?>clients" class="dropdown-item">Listar Clientes</a></li>
+                <li><a href="<?= APP_PATH ?>users" class="dropdown-item">Gerenciar Usuários</a></li>
               </ul>
             </li>
           </ul>
@@ -72,11 +72,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <a href="#" class="dropdown-item">
                 <i class="fas fa-user-circle mr-2"></i> Minha conta
               </a>
-              <a href="orders" class="dropdown-item">
+              <a href="<?= APP_PATH ?>orders" class="dropdown-item">
                 <i class="fas fa-handshake mr-2"></i>Histórico de pedidos
               </a>
               <div class="dropdown-divider"></div>
-              <a href="Login/logout" class="dropdown-item dropdown-footer">Sair</a>
+              <a href="<?= APP_PATH ?>login/logout" class="dropdown-item dropdown-footer">Sair</a>
             </div>
           </li>
         </ul>

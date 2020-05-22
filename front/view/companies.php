@@ -25,7 +25,7 @@
       <div class="row">
         <div class="card col-12">
           <div class="card-header">
-            <a href="addcompany" class="btn btn-success">Nova empresa</a>
+            <a href="companies/add" class="btn btn-success">Nova empresa</a>
           </div>
           <!-- /.card-header -->
           <div class="card-body">

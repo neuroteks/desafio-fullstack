@@ -10,8 +10,8 @@
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href=".">Home</a></li>
-            <li class="breadcrumb-item"><a href="companies">Empresas</a></li>
+            <li class="breadcrumb-item"><a href="..">Home</a></li>
+            <li class="breadcrumb-item"><a href="../companies">Empresas</a></li>
             <li class="breadcrumb-item active">Nova empresa</li>
           </ol>
         </div><!-- /.col -->
@@ -27,7 +27,7 @@
         <!-- general form elements -->
         <div class="card col-12">
           <div class="card-header">
-            <a href="companies" class="btn btn-secondary">Voltar</a>
+            <a href="../companies" class="btn btn-secondary">Voltar</a>
           </div>
           <!-- /.card-header -->
           <!-- form start -->

@@ -2,6 +2,11 @@
 
 class ClientController
 {
+    public function index()
+    {
+        require_once 'view/clients.php';
+    }
+
     public function register()
     {
         $url = API_PATH . 'Client/register';
@@ -19,7 +24,7 @@ class ClientController
         $_SESSION['message'] = $result->message;
 
         if($_SESSION['message'][0] == 'success') {
-            header('Location: ../login');
+            header('Location: ..');
         } else {
             header('Location: ../register');
         }

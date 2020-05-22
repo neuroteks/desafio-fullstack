@@ -25,7 +25,7 @@
       <div class="row">
         <div class="card col-12">
           <div class="card-header">
-            <a href="adduser" class="btn btn-success">Criar usuário</a>
+            <a href="users/add" class="btn btn-success">Criar usuário</a>
           </div>
           <!-- /.card-header -->
           <div class="card-body">

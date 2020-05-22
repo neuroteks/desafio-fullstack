@@ -2,6 +2,24 @@
 
 class LoginController
 {
+    public function index()
+    {
+        if(isset($_SESSION['client'])) {
+            require_once 'view/home.php';
+        } else {
+            require_once 'view/login.php';
+        }
+    }
+
+    public function register()
+    {
+        if(isset($_SESSION['client'])) {
+            header('Location: ' . APP_PATH);
+        } else {
+            require_once 'view/register.php';
+        }
+    }
+
     public function login()
     {
         $url = API_PATH . 'Login/login';
@@ -13,7 +31,9 @@ class LoginController
 
         $result = json_decode($this->httpPost($url, $fields));
 
-        $_SESSION['client'] = $result->client;
+        if($result->client) {
+            $_SESSION['client'] = $result->client;
+        }        
         $_SESSION['message'] = $result->message;
 
         header("Location: ..");
