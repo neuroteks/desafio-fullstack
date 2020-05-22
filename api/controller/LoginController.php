@@ -12,8 +12,7 @@ class LoginController extends Clients
 
         $email = filter_input(INPUT_POST, 'email');
         $password = filter_input(INPUT_POST, 'password');
-        $email = 'gabrielmn378@gmail.com';
-        $password = '123';
+        
         $client = $this->auth($email, $password);
 
         if ($client) {

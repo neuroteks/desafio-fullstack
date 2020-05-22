@@ -25,25 +25,31 @@
       <div class="row">
         <div class="card col-12">
           <div class="card-header">
-            <a href="companies/add" class="btn btn-success">Nova empresa</a>
+            <a href="products/add?id=<?= $id ?>" class="btn btn-success">Novo produto</a>
           </div>
           <!-- /.card-header -->
           <div class="card-body">
             <table id="datatable" class="table table-bordered table-striped">
               <thead>
                 <tr>
-                  <th>Nome da empresa</th>
+                  <th>Nome do produto</th>
+                  <th>Descrição</th>
+                  <th>Preço(R$)</th>
+                  <th>Qtd.</th>
                   <th width="50px"></th>
                 </tr>
               </thead>
               <tbody>
-              <?php foreach($result as $company) : ?>
+              <?php foreach($result as $product) : ?>
                 <tr>
-                  <td><?php echo $company->name; ?></td>
+                  <td><?php echo $product->name; ?></td>
+                  <td><?php echo $product->description; ?></td>
+                  <td><?php echo $product->price; ?></td>
+                  <td><?php echo $product->amount; ?></td>
                   <td>
-                    <a href="products?id=<?= $company->id ?>" class="btn btn-secondary">Gerenciar</a>
+                    <a href="products/delete?id=<?= $product->id ?>" class="btn btn-danger" onclick="return confirm('Deseja realmente deletar esse produto?')">Deletar</a>
                   </td>
-                </tr>
+                </tr> 
                 <?php endforeach; ?>
               </tbody>
             </table>

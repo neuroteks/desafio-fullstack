@@ -31,29 +31,33 @@
           </div>
           <!-- /.card-header -->
           <!-- form start -->
-          <form>
+          <form method="post" action="<?= APP_PATH ?>user/register">
             <div class="card-body">
               <div class="form-group">
-                <label for="client">Usuário</label>
+                <label for="client">Clientes</label>
                 <select class="form-control" id="client" name="client" required>
                   <option value="">- Selecione -</option>
-                  <option value="">Gabriel</option>
+                  <?php foreach ($clients as $client) : ?>
+                    <option value="<?= $client->id ?>"><?= $client->name ?></option>
+                  <?php endforeach; ?>
                 </select>
               </div>
               <div class="form-group">
                 <label for="access">Acesso</label>
-                <select class="form-control" id="access" name="access" required>
+                <select class="form-control" id="access" name="access" onchange="companyHide(this)" required>
                   <option value="">- Selecione -</option>
-                  <option value="server_admin">Suporte do site</option>
-                  <option value="server_admin">Administrador do site</option>
-                  <option value="company_admin">Administrador de empresa</option>
+                  <option value="2">Suporte do site</option>
+                  <option value="3">Administrador do site</option>
+                  <option value="1">Administrador de empresa</option>
                 </select>
               </div>
-              <div class="form-group">
+              <div class="form-group" id="company-form">
                 <label for="company">Empresa</label>
                 <select class="form-control" id="company" name="company" required>
                   <option value="">- Selecione -</option>
-                  <option value="">Empresa X</option>
+                  <?php foreach ($companies as $company) : ?>
+                    <option value="<?= $company->id ?>"><?= $company->name ?></option>
+                  <?php endforeach; ?>
                 </select>
               </div>
               <button type="submit" class="btn btn-success">Cadastrar</button>
@@ -70,3 +74,19 @@
 </div>
 <!-- /.content-wrapper -->
 <?php require_once 'layout_foot.php'; ?>
+
+<script>
+  $('#company-form').hide();
+  $('#company').prop('required', false);
+
+  function companyHide(element) {
+    if (element.value == 1) {
+      $('#company-form').show();
+      $('#company').prop('required', true);
+    } else {
+      $('#company-form').hide();
+      $('#company').prop('required', false);
+      $('#company').val('');
+    }
+  }
+</script>

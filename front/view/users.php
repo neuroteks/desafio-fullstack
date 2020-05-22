@@ -39,14 +39,16 @@
                 </tr>
               </thead>
               <tbody>
+                <?php foreach($result as $user) : ?>
                 <tr>
-                  <td>Trident</td>
-                  <td>Trident</td>
-                  <td>Trident</td>
+                  <td><?= $user->cname ?></td>
+                  <td><?= $user->ename ?></td>
+                  <td><?= $user->acesso ?></td>
                   <td>
-                    <a href="#" class="btn btn-danger" onclick="return confirm('Certeza que deseja deletar?')">Deletar</a>
+                    <a href="user/delete?id=<?= $user->id ?>" class="btn btn-danger" onclick="return confirm('Certeza que deseja deletar?')">Deletar</a>
                   </td>
                 </tr>
+                <?php endforeach; ?>
               </tbody>
             </table>
           </div>

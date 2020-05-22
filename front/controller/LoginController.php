@@ -5,6 +5,10 @@ class LoginController
     public function index()
     {
         if(isset($_SESSION['client'])) {
+            $url = API_PATH . 'Product/listAll';
+
+            $products = json_decode($this->httpPost($url, []));
+
             require_once 'view/home.php';
         } else {
             require_once 'view/login.php';

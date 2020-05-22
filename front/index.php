@@ -15,8 +15,14 @@ $routes = [
     'clients' => ['controller' => 'ClientController', 'class' => 'index', 'validation' => 1],
     'users' => ['controller' => 'UserController', 'class' => 'index', 'validation' => 1],
     'users/add' => ['controller' => 'UserController', 'class' => 'add', 'validation' => 1],
+    'user/register' => ['controller' => 'UserController', 'class' => 'register', 'validation' => 1],
+    'user/delete' => ['controller' => 'UserController', 'class' => 'delete', 'validation' => 1],
     'orders' => ['controller' => 'OrderController', 'class' => 'index', 'validation' => 1],
     'product' => ['controller' => 'ProductController', 'class' => 'view', 'validation' => 1],
+    'products' => ['controller' => 'ProductController', 'class' => 'index', 'validation' => 1],
+    'products/delete' => ['controller' => 'ProductController', 'class' => 'delete', 'validation' => 1],
+    'products/add' => ['controller' => 'ProductController', 'class' => 'add', 'validation' => 1],
+    'product/register' => ['controller' => 'ProductController', 'class' => 'register', 'validation' => 1],
 ];
 ////////////////////////////////
 

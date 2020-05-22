@@ -22,54 +22,33 @@
   <div class="content">
     <div class="container">
       <div class="row">
-        <div class="card col-4">
-          <div class="card-header">
-            <h4 class="product-name">Super Café</h4>
-          </div>
-          <!-- /.card-header -->
-          <div class="card-body">
-            <div class="row">
-              <div class="col-6">
-                <img src="<?= API_PATH . 'products_img/supercoffee.jpg' ?>" width="100%">
-              </div>
-              <div class="col-6">
-                <h4>R$ 10,00</h4>
-                <p><?= substr("Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis quo voluptatibus dignissimos tenetur alias sint nemo velit enim asperiores odio quidem, sit nulla neque quisquam ratione, explicabo quas distinctio laboriosam!", 0, 60) ?>
-                  <?php if (strlen("Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis quo v") > 60) echo '...' ?></p>
-                <a href="product" class="btn btn-primary">Ver produto</a>
+        <?php foreach ($products as $product) : ?>
+          <div class="card col-4">
+            <div class="card-header">
+              <h4 class="product-name"><?= $product->produto ?></h4>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+              <div class="row">
+                <div class="col-6">
+                  <img src="<?= API_PATH . 'products_img/supercoffee.jpg' ?>" width="100%">
+                </div>
+                <div class="col-6">
+                  <h4>R$ <?= $product->price ?></h4>
+                  <p><?= substr($product->description, 0, 60) ?>
+                    <?php if (strlen($product->description) > 60) echo '...' ?></p>
+                  <a href="product?id=<?= $product->id ?>" class="btn btn-primary">Ver produto</a>
+                </div>
               </div>
             </div>
-          </div>
-          <!-- /.card-body -->
-          <div class="card-footer">
-            <label>Vendido por:</label> Empresa 01
-          </div>
-        </div>
-        <!-- /.card -->
-        <div class="card col-4">
-          <div class="card-header">
-            <h4 class="product-name">Caneca Café Programador</h4>
-          </div>
-          <!-- /.card-header -->
-          <div class="card-body">
-            <div class="row">
-              <div class="col-6">
-                <img src="<?= API_PATH . 'products_img/canecacafe.jpg' ?>" width="100%">
-              </div>
-              <div class="col-6">
-                <h4>R$ 10,00</h4>
-                <p><?= substr("Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis quo voluptatibus dignissimos tenetur alias sint nemo velit enim asperiores odio quidem, sit nulla neque quisquam ratione, explicabo quas distinctio laboriosam!", 0, 60) ?>
-                  <?php if (strlen("Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis quo v") > 60) echo '...' ?></p>
-                <a href="" class="btn btn-primary">Ver produto</a>
-              </div>
+            <!-- /.card-body -->
+            <div class="card-footer">
+              <label>Vendido por:</label> <?= $product->empresa ?>
             </div>
           </div>
-          <!-- /.card-body -->
-          <div class="card-footer">
-            <label>Vendido por:</label> Empresa 01
-          </div>
-        </div>
-        <!-- /.card -->
+          <!-- /.card -->
+
+        <?php endforeach; ?>
       </div>
       <!-- /.row -->
     </div><!-- /.container-fluid -->

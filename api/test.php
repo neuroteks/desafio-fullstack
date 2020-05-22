@@ -1,10 +1,10 @@
 <?php
 
-require_once 'controller/LoginController.php';
+require_once 'controller/UserController.php';
 
-$test = new LoginController();
+$test = new UserController();
 
-$result = $test->login();
+$result = $test->list();
 
 
 var_dump($result);

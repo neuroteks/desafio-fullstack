@@ -4,6 +4,10 @@ class CompanyController
 {
     public function index()
     {
+        $url = API_PATH . 'Company/list';
+
+        $result = json_decode($this->httpPost($url, []));
+
         require_once 'view/companies.php';
     }
 

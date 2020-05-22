@@ -11,7 +11,7 @@ class Clients extends Connection
 
     public function all()
     {
-        $sql = "SELECT name, email, cpf, last_login FROM clientes ORDER BY name";
+        $sql = "SELECT id, name, email, cpf, last_login FROM clientes ORDER BY name";
 
         if ($conn = $this->connect()) {
             return $conn->query($sql);

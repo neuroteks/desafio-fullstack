@@ -33,6 +33,7 @@ class Connection
             `email` varchar(255) NOT NULL,
             `cpf` varchar(15) NOT NULL,
             `password` varchar(255) NOT NULL,
+            `last_login` datetime DEFAULT NULL,
             `created` datetime NOT NULL DEFAULT current_timestamp(),
             PRIMARY KEY (`id`)
           ) ENGINE=InnoDB DEFAULT CHARSET=utf8;";
