@@ -32,7 +32,7 @@
 
         <form action="Client/register" method="post">
           <div class="input-group mb-3">
-            <input type="text" name="name" class="form-control" placeholder="Nome">
+            <input type="text" name="name" class="form-control" placeholder="Nome" required>
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fas fa-user"></span>
@@ -40,7 +40,7 @@
             </div>
           </div>
           <div class="input-group mb-3">
-            <input type="text" name="email" class="form-control" placeholder="Email">
+            <input type="text" name="email" class="form-control" placeholder="Email" required>
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fas fa-envelope"></span>
@@ -48,7 +48,7 @@
             </div>
           </div>
           <div class="input-group mb-3">
-            <input type="text" name="cpf" class="form-control" placeholder="CPF">
+            <input type="text" name="cpf" id="cpf" class="form-control cpf" placeholder="CPF" required>
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fas fa-fingerprint"></span>
@@ -56,7 +56,7 @@
             </div>
           </div>
           <div class="input-group mb-3">
-            <input type="password" name="password" class="form-control" placeholder="Senha">
+            <input type="password" name="password" id="password" class="form-control" placeholder="Senha" required>
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fas fa-lock"></span>
@@ -64,14 +64,14 @@
             </div>
           </div>
           <div class="input-group mb-3">
-            <input type="password" name="password_confirm" class="form-control" placeholder="Confirmar senha">
+            <input type="password" name="password_confirm" id="password_confirm" class="form-control" placeholder="Confirmar senha" required>
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fas fa-lock"></span>
               </div>
             </div>
           </div>
-          <button type="submit" class="btn btn-primary btn-block">Registrar</button>
+          <button type="submit" class="btn btn-primary btn-block" onclick="return validation()">Registrar</button>
         </form>
         <hr>
         <p class="mb-1">
@@ -85,6 +85,7 @@
 
   <!-- jQuery -->
   <script src="view/plugins/jquery/jquery.min.js"></script>
+  <script src="view/plugins/jquery/jquery.mask.min.js"></script>
   <!-- Bootstrap 4 -->
   <script src="view/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
   <!-- SweetAlert2 -->
@@ -103,3 +104,21 @@
 </body>
 
 </html>
+
+<script>
+  $('.cpf').mask('000.000.000-00', {
+    reverse: true
+  });
+
+  function validation() {
+    if ($('#cpf')[0].value.length < 14) {
+      toastr.error("CPF inválido!");
+      return false;
+    }
+    if ($('#password')[0].value != $('#password_confirm')[0].value) {
+      toastr.error("As senhas não são iguais!");
+      return false;
+    }
+    return true;
+  }
+</script>

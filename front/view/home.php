@@ -36,7 +36,7 @@
                 <h4>R$ 10,00</h4>
                 <p><?= substr("Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis quo voluptatibus dignissimos tenetur alias sint nemo velit enim asperiores odio quidem, sit nulla neque quisquam ratione, explicabo quas distinctio laboriosam!", 0, 60) ?>
                   <?php if (strlen("Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis quo v") > 60) echo '...' ?></p>
-                <a href="" class="btn btn-primary">Ver produto</a>
+                <a href="product" class="btn btn-primary">Ver produto</a>
               </div>
             </div>
           </div>

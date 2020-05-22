@@ -1,10 +1,11 @@
 <?php
-
-session_start();
-
+// API HTTP SERVER PATH //
 $url = "http://$_SERVER[HTTP_HOST]/desafio-fullstack/api/";
+////////////////////////////////
 
 define('API_PATH', $url);
+
+session_start();
 
 $path = explode('/', filter_input(INPUT_GET, 'path'));
 

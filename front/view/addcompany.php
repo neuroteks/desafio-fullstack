@@ -34,14 +34,14 @@
           <form>
             <div class="card-body">
               <div class="form-group">
-                <label for="exampleInputEmail1">Nome da empresa</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Nome da empresa">
+                <label for="name">Nome da empresa</label>
+                <input type="text" class="form-control" id="name" placeholder="Nome da empresa" required maxlength="100">
               </div>
               <div class="form-group">
-                <label for="exampleInputPassword1">CNPJ</label>
-                <input type="text" class="form-control" id="exampleInputPassword1" placeholder="00.000.000/0000-00">
+                <label for="cnpj">CNPJ</label>
+                <input type="text" class="form-control cnpj" id="cnpj" placeholder="00.000.000/0000-00" required>
               </div>
-              <button type="submit" class="btn btn-primary">Cadastrar</button>
+              <button type="submit" class="btn btn-primary" onclick="return validation()">Cadastrar</button>
             </div>
             <!-- /.card-body -->
           </form>
@@ -55,3 +55,16 @@
 </div>
 <!-- /.content-wrapper -->
 <?php require_once 'layout_foot.php'; ?>
+<script>
+  $('.cnpj').mask('00.000.000/0000-00', {
+    reverse: true
+  });
+
+  function validation() {
+    if ($('#cnpj')[0].value.length < 17) {
+      toastr.error("CNPJ inválido!");
+      return false;
+    }
+    return true;
+  }
+</script>

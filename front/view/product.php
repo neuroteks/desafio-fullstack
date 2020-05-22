@@ -24,29 +24,23 @@
     <div class="container">
       <div class="row">
         <div class="card col-12">
-          <div class="card-header">
-            Clientes cadastrados
-          </div>
           <!-- /.card-header -->
           <div class="card-body">
-            <table id="datatable" class="table table-bordered table-striped">
-              <thead>
-                <tr>
-                  <th>Nome</th>
-                  <th>Email</th>
-                  <th>CPF</th>
-                  <th>Ultimo acesso</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Trident</td>
-                  <td>Trident</td>
-                  <td>Trident</td>
-                  <td>Trident</td>
-                </tr>
-              </tbody>
-            </table>
+            <div class="row">
+              <div class="col-6">
+                <img src="<?= API_PATH . 'products_img/supercoffee.jpg' ?>" width="100%">
+              </div>
+              <div class="col-6">
+                <h4>Super Café</h4>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis quo voluptatibus dignissimos tenetur alias sint nemo velit enim asperiores odio quidem, sit nulla neque quisquam ratione, explicabo quas distinctio laboriosam!</p>
+                <h4>R$ 10,00</h4>
+                <form>
+                  <label for="amount" class="product-label">Quantidade</label>
+                  <input type="number" name="amount" id="amount" class="form-control product-amount" value="1">
+                  <a href="product" class="btn btn-success product-buttom" onclick="return confirm('Deseja comprar esse produto?')">Comprar</a>
+                </form>
+              </div>
+            </div>
           </div>
           <!-- /.card-body -->
         </div>
@@ -59,13 +53,3 @@
 </div>
 <!-- /.content-wrapper -->
 <?php require_once 'layout_foot.php'; ?>
-
-<!-- Page Script -->
-<script>
-  $(function() {
-    $("#datatable").DataTable({
-      "responsive": true,
-      "autoWidth": false,
-    });
-  });
-</script>

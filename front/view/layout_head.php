@@ -64,7 +64,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <!-- Notifications Dropdown Menu -->
           <li class="nav-item dropdown">
             <a class="nav-link" data-toggle="dropdown" href="#">
-              <i class="fas fa-user"></i> Olá, <b><?= explode(" ", $_SESSION['client']->name)[0] ?></b>
+              Olá, <b><?= explode(" ", $_SESSION['client']->name)[0] ?> <i class="fas fa-caret-down"></i></b>
             </a>
             <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
               <span class="dropdown-header"><?= $_SESSION['client']->name ?></span>
@@ -76,7 +76,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <i class="fas fa-handshake mr-2"></i>Histórico de pedidos
               </a>
               <div class="dropdown-divider"></div>
-              <a href="login/logout" class="dropdown-item dropdown-footer">Sair</a>
+              <a href="Login/logout" class="dropdown-item dropdown-footer">Sair</a>
             </div>
           </li>
         </ul>
