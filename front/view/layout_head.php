@@ -46,16 +46,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <li class="nav-item">
               <a href="<?= APP_PATH ?>" class="nav-link">Home</a>
             </li>
-            <li class="nav-item">
-              <a href="<?= APP_PATH ?>companies" class="nav-link">Empresa</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">Sistema</a>
-              <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow">
-                <li><a href="<?= APP_PATH ?>clients" class="dropdown-item">Listar Clientes</a></li>
-                <li><a href="<?= APP_PATH ?>users" class="dropdown-item">Gerenciar Usuários</a></li>
-              </ul>
-            </li>
+            <?php if (isset($_SESSION['client']->acesso) && $_SESSION['client']->acesso > 1) : ?>
+              <li class="nav-item">
+                <a href="<?= APP_PATH ?>companies" class="nav-link">Empresa</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">Sistema</a>
+                <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow">
+                  <li><a href="<?= APP_PATH ?>clients" class="dropdown-item">Listar Clientes</a></li>
+                  <li><a href="<?= APP_PATH ?>users" class="dropdown-item">Gerenciar Usuários</a></li>
+                </ul>
+              </li>
+            <?php endif; ?>
           </ul>
         </div>
 

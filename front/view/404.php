@@ -19,7 +19,11 @@
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
-
+<?php 
+echo '<pre>';
+var_dump($_SESSION['client']);
+echo '</pre>';
+?>
 <body class="layout-top-nav">
   <div class="wrapper">
 

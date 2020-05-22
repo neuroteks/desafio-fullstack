@@ -32,27 +32,6 @@ class Users extends Connection
         die(json_encode(["message" => $message]));
     }
 
-
-    public function auth($email, $password)
-    {
-        $sql = "SELECT * FROM clientes WHERE email = '$email'";
-
-        if ($conn = $this->connect()) {
-            $client = $conn->query($sql);
-            $client = $client->fetch_array();
-
-            if ($client) {
-                if (password_verify($password, $client['password'])) {
-                    $sql = "UPDATE clientes SET last_login = current_timestamp() WHERE id = '$client[0]'";
-                    $conn->query($sql);
-
-                    return $client;
-                }
-            }
-        }
-        return false;
-    }
-
     public function deleteUser($id)
     {
         $sql = "DELETE FROM usuarios WHERE id = '$id'";

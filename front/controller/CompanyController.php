@@ -16,6 +16,26 @@ class CompanyController
         require_once 'view/addcompany.php';
     }
 
+    public function register()
+    {
+        $url = API_PATH . 'Company/register';
+
+        $fields = [
+            'name' => filter_input(INPUT_POST, 'name'),
+            'cnpj' => filter_input(INPUT_POST, 'cnpj')
+        ];
+
+        $result = json_decode($this->httpPost($url, $fields));
+
+        $_SESSION['message'] = $result->message;
+
+        if ($_SESSION['message'][0] == 'success') {
+            header('Location: ../companies');
+        } else {
+            header('Location: ../companies/add');
+        }
+    }
+
     public function httpPost($url, $data)
     {
         $curl = curl_init($url);

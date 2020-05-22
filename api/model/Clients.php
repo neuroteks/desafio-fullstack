@@ -46,6 +46,11 @@ class Clients extends Connection
                     $sql = "UPDATE clientes SET last_login = current_timestamp() WHERE id = '$client[0]'";
                     $conn->query($sql);
 
+                    $sql = "SELECT acesso FROM usuarios WHERE cliente_id = '$client[0]' AND empresa_id IS NULL";
+                    $result = $conn->query($sql);
+                    while($acesso = $result->fetch_array()) {
+                        $client['acesso'] = $acesso['acesso'];
+                    }
                     return $client;
                 }
             }

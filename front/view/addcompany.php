@@ -31,15 +31,15 @@
           </div>
           <!-- /.card-header -->
           <!-- form start -->
-          <form>
+          <form method="post" action="../company/register">
             <div class="card-body">
               <div class="form-group">
                 <label for="name">Nome da empresa</label>
-                <input type="text" class="form-control" id="name" placeholder="Nome da empresa" required maxlength="100">
+                <input type="text" class="form-control" id="name" name="name" placeholder="Nome da empresa" required maxlength="100">
               </div>
               <div class="form-group">
                 <label for="cnpj">CNPJ</label>
-                <input type="text" class="form-control cnpj" id="cnpj" placeholder="00.000.000/0000-00" required>
+                <input type="text" class="form-control cnpj" id="cnpj" name="cnpj" placeholder="00.000.000/0000-00" required>
               </div>
               <button type="submit" class="btn btn-primary" onclick="return validation()">Cadastrar</button>
             </div>

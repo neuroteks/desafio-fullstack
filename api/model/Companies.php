@@ -16,15 +16,15 @@ class Companies extends Connection
         }
     }
 
-    public function add($name, $email, $cpf, $password)
+    public function add($name, $cnpj)
     {
-        $sql = "INSERT INTO clientes (name, email, cpf, password) VALUES ('$name', '$email', '$cpf', '$password')";
+        $sql = "INSERT INTO empresas (name, cnpj) VALUES ('$name', '$cnpj')";
 
         if ($conn = $this->connect()) {
             if ($conn->query($sql)) {
-                $message = ["success", "Conta criada com sucesso."];
+                $message = ["success", "Empresa criada com sucesso."];
             } else {
-                $message = ["error", "Erro ao cadastrar conta."];
+                $message = ["error", "Erro ao cadastrar empresa."];
             }
         }
         die(json_encode(["message" => $message]));

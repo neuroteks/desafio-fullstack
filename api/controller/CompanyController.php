@@ -11,11 +11,9 @@ class CompanyController extends Companies
         }
 
         $name = filter_input(INPUT_POST, 'name');
-        $email = filter_input(INPUT_POST, 'email');
-        $cpf = filter_input(INPUT_POST, 'cpf');
-        $password = password_hash(filter_input(INPUT_POST, 'password'), PASSWORD_DEFAULT);
+        $cnpj = filter_input(INPUT_POST, 'cnpj');
 
-        $this->add($name, $email, $cpf, $password);
+        $this->add($name, $cnpj);
     }
 
     public function list()
