@@ -92,6 +92,10 @@ class Connection
         ADD CONSTRAINT `usuarios_ibfk_1` FOREIGN KEY (`cliente_id`) REFERENCES `clientes` (`id`),
         ADD CONSTRAINT `usuarios_ibfk_2` FOREIGN KEY (`empresa_id`) REFERENCES `empresas` (`id`);";
 
+        $add_admin = 'INSERT INTO `clientes` (`name`, `email`, `cpf`, `password`) VALUES ("Administrador", "admin", "111.111.111-11", "$2y$10$rRPO9AJKToSR4Tt5d1IS/Od9U1g7uKTXwENuYXBtscuUTThhFWP3W");';
+
+        $add_user = "INSERT INTO `usuarios` (`cliente_id`, `acesso`) VALUES (1, 3);";
+
         mysqli_query($link, $db_query);
         mysqli_query($link, "USE `$connect->db`");
         mysqli_query($link, $clients_query);
@@ -102,5 +106,7 @@ class Connection
         mysqli_query($link, $altertable_orders);
         mysqli_query($link, $altertable_products);
         mysqli_query($link, $altertable_users);
+        mysqli_query($link, $add_admin);
+        mysqli_query($link, $add_user);
     }
 }
