@@ -4,7 +4,7 @@ class LoginController
 {
     public function login()
     {
-        $url = API_PATH . 'login/login';
+        $url = API_PATH . 'Login/login';
 
         $fields = [
             'email' => filter_input(INPUT_POST, 'email'),

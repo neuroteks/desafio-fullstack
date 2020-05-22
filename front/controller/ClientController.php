@@ -4,7 +4,7 @@ class ClientController
 {
     public function register()
     {
-        $url = API_PATH . 'client/register';
+        $url = API_PATH . 'Client/register';
 
         $fields = [
             'name' => filter_input(INPUT_POST, 'name'),

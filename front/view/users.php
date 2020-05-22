@@ -6,12 +6,12 @@
     <div class="container">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1 class="m-0 text-dark">Empresas</h1>
+          <h1 class="m-0 text-dark">Usuários</h1>
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href=".">Home</a></li>
-            <li class="breadcrumb-item active">Empresas</li>
+            <li class="breadcrumb-item active">Usuários</li>
           </ol>
         </div><!-- /.col -->
       </div><!-- /.row -->
@@ -25,22 +25,26 @@
       <div class="row">
         <div class="card col-12">
           <div class="card-header">
-            <a href="addcompany" class="btn btn-success">Nova empresa</a>
+            <a href="adduser" class="btn btn-success">Criar usuário</a>
           </div>
           <!-- /.card-header -->
           <div class="card-body">
             <table id="example1" class="table table-bordered table-striped">
               <thead>
                 <tr>
-                  <th>Nome da empresa</th>
+                  <th>Nome</th>
+                  <th>Empresa</th>
+                  <th>Acesso</th>
                   <th width="50px"></th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td>Trident</td>
+                  <td>Trident</td>
+                  <td>Trident</td>
                   <td>
-                    <a href="#" class="btn btn-secondary">Gerenciar</a>
+                    <a href="#" class="btn btn-danger" onclick="return confirm('Certeza que deseja deletar?')">Deletar</a>
                   </td>
                 </tr>
               </tbody>

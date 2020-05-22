@@ -1,5 +1,7 @@
 <?php
 
+error_reporting(0);
+
 $path = explode('/', filter_input(INPUT_GET, 'path'));
 
 $class = $path[0] . 'Controller';

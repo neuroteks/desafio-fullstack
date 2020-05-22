@@ -30,7 +30,7 @@
       <div class="card-body login-card-body">
         <p class="login-box-msg">Entre com seu email e senha</p>
 
-        <form action="login/login" method="post">
+        <form action="Login/login" method="post">
           <div class="input-group mb-3">
             <input type="text" name="email" class="form-control" placeholder="Email">
             <div class="input-group-append">

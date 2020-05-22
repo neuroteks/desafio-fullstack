@@ -6,12 +6,13 @@
     <div class="container">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1 class="m-0 text-dark">Empresas</h1>
+          <h1 class="m-0 text-dark">Nova empresa</h1>
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href=".">Home</a></li>
-            <li class="breadcrumb-item active">Empresas</li>
+            <li class="breadcrumb-item"><a href="companies">Empresas</a></li>
+            <li class="breadcrumb-item active">Nova empresa</li>
           </ol>
         </div><!-- /.col -->
       </div><!-- /.row -->
@@ -23,30 +24,27 @@
   <div class="content">
     <div class="container">
       <div class="row">
+        <!-- general form elements -->
         <div class="card col-12">
           <div class="card-header">
-            <a href="addcompany" class="btn btn-success">Nova empresa</a>
+            <a href="companies" class="btn btn-secondary">Voltar</a>
           </div>
           <!-- /.card-header -->
-          <div class="card-body">
-            <table id="example1" class="table table-bordered table-striped">
-              <thead>
-                <tr>
-                  <th>Nome da empresa</th>
-                  <th width="50px"></th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Trident</td>
-                  <td>
-                    <a href="#" class="btn btn-secondary">Gerenciar</a>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <!-- /.card-body -->
+          <!-- form start -->
+          <form>
+            <div class="card-body">
+              <div class="form-group">
+                <label for="exampleInputEmail1">Nome da empresa</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Nome da empresa">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">CNPJ</label>
+                <input type="text" class="form-control" id="exampleInputPassword1" placeholder="00.000.000/0000-00">
+              </div>
+              <button type="submit" class="btn btn-primary">Cadastrar</button>
+            </div>
+            <!-- /.card-body -->
+          </form>
         </div>
         <!-- /.card -->
       </div>
