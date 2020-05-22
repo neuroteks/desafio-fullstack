@@ -1,7 +1,9 @@
 <?php
 
 // API HTTP SERVER PATH //
-$url = "http://$_SERVER[HTTP_HOST]/desafio-fullstack/api/";
+$folder = 'desafio-fullstack';
+
+$url = "http://$_SERVER[HTTP_HOST]/".$folder."/api/";
 ////////////////////////////////
 // ROUTES //
 $routes = [
