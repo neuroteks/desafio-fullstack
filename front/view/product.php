@@ -31,13 +31,15 @@
                 <img src="<?= API_PATH . 'products_img/supercoffee.jpg' ?>" width="100%">
               </div>
               <div class="col-6">
-                <h4>Super Café</h4>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis quo voluptatibus dignissimos tenetur alias sint nemo velit enim asperiores odio quidem, sit nulla neque quisquam ratione, explicabo quas distinctio laboriosam!</p>
-                <h4>R$ 10,00</h4>
-                <form>
+                <h4><?= $product->produto ?></h4>
+                <p><?= $product->description ?></p>
+                <h4>R$ <?= $product->price ?></h4>
+                <form method="post" action="product/buy">
                   <label for="amount" class="product-label">Quantidade</label>
-                  <input type="number" name="amount" id="amount" class="form-control product-amount" value="1">
-                  <a href="product" class="btn btn-success product-buttom" onclick="return confirm('Deseja comprar esse produto?')">Comprar</a>
+                  <input type="number" name="amount" id="amount" class="form-control product-amount" value="1" min="1">
+                  <input type="hidden" name="price" value="<?= $product->price ?>">
+                  <input type="hidden" name="id" value="<?= $product->id ?>">
+                  <input type="submit" class="btn btn-success product-buttom" onclick="return confirm('Deseja comprar esse produto?')" value="Comprar">
                 </form>
               </div>
             </div>

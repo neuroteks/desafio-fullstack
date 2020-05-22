@@ -23,6 +23,7 @@ $routes = [
     'products/delete' => ['controller' => 'ProductController', 'class' => 'delete', 'validation' => 1],
     'products/add' => ['controller' => 'ProductController', 'class' => 'add', 'validation' => 1],
     'product/register' => ['controller' => 'ProductController', 'class' => 'register', 'validation' => 1],
+    'product/buy' => ['controller' => 'OrderController', 'class' => 'buy', 'validation' => 1],
 ];
 ////////////////////////////////
 

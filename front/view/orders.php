@@ -35,18 +35,20 @@
                   <th>Produto</th>
                   <th>Empresa</th>
                   <th>Quantidade</th>
-                  <th>Valor</th>
+                  <th>Total</th>
                   <th>Data</th>
                 </tr>
               </thead>
               <tbody>
+                <?php foreach($result as $pedido) : ?>
                 <tr>
-                  <td>Trident</td>
-                  <td>Trident</td>
-                  <td>Trident</td>
-                  <td>Trident</td>
-                  <td>Trident</td>
+                  <td><?= $pedido->produto ?></td>
+                  <td><?= $pedido->empresa ?></td>
+                  <td><?= $pedido->amount ?></td>
+                  <td>R$ <?= $pedido->price * $pedido->amount ?></td>
+                  <td><?= date("d/m/y h:i:s", strtotime($pedido->created)) ?></td>
                 </tr>
+                <?php endforeach; ?>
               </tbody>
             </table>
           </div>

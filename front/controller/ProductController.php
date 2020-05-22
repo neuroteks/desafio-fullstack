@@ -19,6 +19,16 @@ class ProductController
 
     public function view()
     {
+        $url = API_PATH . 'Product/get';
+
+        $id = filter_input(INPUT_GET, 'id');
+
+        $fields = [
+            'id' => $id
+        ];
+
+        $product = json_decode($this->httpPost($url, $fields));
+        
         require_once 'view/product.php';
     }
 

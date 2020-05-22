@@ -13,6 +13,17 @@ class Products extends Connection
         }
     }
 
+
+    public function getProduct($id)
+    {
+        $sql = "SELECT P.id, P.name AS produto, P.description, P.price, P.amount, E.name AS empresa FROM produtos P JOIN empresas E ON (P.empresa_id = E.id) WHERE P.id = '$id'";
+
+        if ($conn = $this->connect()) {
+            $result = $conn->query($sql);
+            return $result->fetch_array();
+        }
+    }
+
     public function allProducts()
     {
         $sql = "SELECT P.id, P.name AS produto, P.description, P.price, P.amount, E.name AS empresa FROM produtos P JOIN empresas E ON (P.empresa_id = E.id) ORDER BY P.name";

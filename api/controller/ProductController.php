@@ -4,6 +4,19 @@ require_once 'model/Products.php';
 
 class ProductController extends Products
 {
+    public function get()
+    {
+        if(getenv('REQUEST_METHOD') != 'POST') {
+            return false;
+        }
+
+        $id = filter_input(INPUT_POST, 'id');
+
+        $product = $this->getProduct($id);
+
+        die(json_encode($product));
+    }
+
     public function register()
     {
         if(getenv('REQUEST_METHOD') != 'POST') {
