@@ -18,7 +18,6 @@
     </div><!-- /.container-fluid -->
   </div>
   <!-- /.content-header -->
-
   <!-- Main content -->
   <div class="content">
     <div class="container">
@@ -39,12 +38,14 @@
                 </tr>
               </thead>
               <tbody>
+                <?php foreach($result as $client) : ?>
                 <tr>
-                  <td>Trident</td>
-                  <td>Trident</td>
-                  <td>Trident</td>
-                  <td>Trident</td>
+                  <td><?= $client->name ?></td>
+                  <td><?= $client->email ?></td>
+                  <td><?= $client->cpf ?></td>
+                  <td><?php if(isset($client->last_login)) echo date("d/m/y h:i:s", strtotime($client->last_login)) ?></td>
                 </tr>
+                <?php endforeach; ?>
               </tbody>
             </table>
           </div>

@@ -9,8 +9,13 @@ class Clients extends Connection
     protected $cpf;
     protected $password;
 
-    public function get($id)
+    public function all()
     {
+        $sql = "SELECT name, email, cpf, last_login FROM clientes ORDER BY name";
+
+        if ($conn = $this->connect()) {
+            return $conn->query($sql);
+        }
     }
 
     public function add($name, $email, $cpf, $password)
@@ -38,6 +43,9 @@ class Clients extends Connection
 
             if ($client) {
                 if (password_verify($password, $client['password'])) {
+                    $sql = "UPDATE clientes SET last_login = current_timestamp() WHERE id = '$client[0]'";
+                    $conn->query($sql);
+
                     return $client;
                 }
             }

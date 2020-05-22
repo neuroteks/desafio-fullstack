@@ -17,4 +17,19 @@ class ClientController extends Clients
 
         $this->add($name, $email, $cpf, $password);
     }
+
+    public function list()
+    {
+        if(getenv('REQUEST_METHOD') != 'POST') {
+            return false;
+        }
+
+        $clients = $this->all();
+        $result = [];
+        while($client = $clients->fetch_assoc()) {
+            array_push($result, $client);
+        }
+
+        die(json_encode($result));
+    }
 }

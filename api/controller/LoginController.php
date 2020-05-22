@@ -12,14 +12,11 @@ class LoginController extends Clients
 
         $email = filter_input(INPUT_POST, 'email');
         $password = filter_input(INPUT_POST, 'password');
-
+        $email = 'gabrielmn378@gmail.com';
+        $password = '123';
         $client = $this->auth($email, $password);
 
         if ($client) {
-            require_once 'model/SessionToken.php';
-            $token = new SessionToken();
-            $client['session_token'] = $token->create($client['id']);
-
             $success = ["success", "Bem vindo!"];
         } else {
             $success = ["error", "Email ou senha inválidos."];

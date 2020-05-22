@@ -4,6 +4,10 @@ class ClientController
 {
     public function index()
     {
+        $url = API_PATH . 'Client/list';
+
+        $result = json_decode($this->httpPost($url, []));
+
         require_once 'view/clients.php';
     }
 
@@ -23,7 +27,7 @@ class ClientController
 
         $_SESSION['message'] = $result->message;
 
-        if($_SESSION['message'][0] == 'success') {
+        if ($_SESSION['message'][0] == 'success') {
             header('Location: ..');
         } else {
             header('Location: ../register');
