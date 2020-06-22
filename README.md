@@ -30,11 +30,11 @@ A aplicação deverá conter as seguintes tabelas no banco de dados:
 - Criar uma API para cada linguagem será um diferencial.
 - O front-end deverá ser feito em VueJS ou ReactJs
 - Criar o front-end nos dois frameworks será um diferencial.
-- O banco deve ser feito usando MySQL, porém pode ser feito em PostgreSQL ou MSSQL também.
+- O banco preferencialmente pode ser construido com MySQL, porém, pode ser feito em PostgreSQL ou MSSQL também.
 - Migrations são essenciais
 - TDD é um diferencial, não é obrigatório para o desafio, porém usamos no dia a dia.
 - Uso de docker é um diferencial também, achamos BEM LEGAL e claro que usamos.
-- Não é obrigatório, mas um app em Flutter ou React-native, que consome a API seria bem legal também!
+- Não é obrigatório, mas um app em Flutter ou React-native, que consome a API será um grande diferencial, já que produzimos apps também!
 
 ##### Obs:
 ###### 1° - Não precisa fazer tudo, mas tudo que fizer, DEVE FUNCIONAR!
