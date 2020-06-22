@@ -25,7 +25,7 @@ A aplicação deverá conter as seguintes tabelas no banco de dados:
 * Pedidos - Aqui é o resultado do ato da compra de um produto pelo cliente.
 
 ##### Valores de entrega:
-- O projeto deve ser criado com um back-end separado de um front-end, eles conversaram via http.
+- O projeto deve ser criado com um back-end separado de um front-end, eles conversarão via http.
 - A API deve ser feita em PHP, Java(Springboot) ou NodeJS(Express) com Typescript.
 - Criar uma API para cada linguagem será um diferencial.
 - O front-end deverá ser feito em VueJS ou ReactJs
